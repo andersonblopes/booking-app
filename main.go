@@ -2,21 +2,50 @@ package main
 
 import "fmt"
 
+var conferenceName = "GO CONFERENCE"
+
+// User info
+var firstName string
+var lastName string
+var email string
+var numberOfTickets int
+
 func main() {
 
-	var conferenceName = "Go conference"
-	const conferenceTickets = 50
-	var remainingTickets = conferenceTickets
+	fmt.Println("==========================", conferenceName, "==========================")
+	fmt.Printf("Welcome to our booking application!\n")
+	fmt.Printf("\nGet your ticket here to attend\n")
 
-	fmt.Printf("Welcome to our %v booking application!\n", conferenceName)
-	fmt.Println("We have total of", conferenceTickets, "tickets, and", remainingTickets, "are still available!")
-	fmt.Println("Get your ticket here to attend")
-
-	var userName string
-	var userTicket int
 	// Ask user their name
 
-	userName = "Lopes"
-	userTicket = 10
-	fmt.Printf("The user %v booked the %v° ticket\n", userName, userTicket)
+	fmt.Println("==========================")
+
+	obtainUserInfo()
+
+	fmt.Println("==========================")
+
+	obtainConferenceData()
+
+	fmt.Printf("Thank you %v %v for booking %v tickets, you will receive an email confirmation at %v \n", firstName, lastName, numberOfTickets, email)
+
+	fmt.Println("==========================")
+
+	// fmt.Println(conferenceTickets)  // prints variable value
+	// fmt.Println(&conferenceTickets) // & prints memory address reference
+}
+
+func obtainUserInfo() {
+
+	fmt.Print("Enter your first name: ")
+	fmt.Scan(&firstName)
+	fmt.Print("Enter your last name: ")
+	fmt.Scan(&lastName)
+	fmt.Print("Enter your email address: ")
+	fmt.Scan(&email)
+
+}
+
+func obtainConferenceData() {
+	fmt.Print("How many tickets to book?: ")
+	fmt.Scan(&numberOfTickets)
 }
