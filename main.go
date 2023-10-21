@@ -62,7 +62,10 @@ func obtainUserInfo(u model.User) model.User {
 
 func obtainConferenceData() {
 	fmt.Print("How many tickets to book?: ")
-	fmt.Scan(&numberOfTickets)
+	_, err := fmt.Scan(&numberOfTickets)
+	if err != nil {
+		return
+	}
 }
 
 func updateRemainingTickets(amount uint) {
