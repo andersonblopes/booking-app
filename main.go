@@ -41,11 +41,20 @@ func main() {
 func obtainUserInfo(u model.User) model.User {
 
 	fmt.Print("Enter your first name: ")
-	fmt.Scan(&u.FirstName)
+	_, err := fmt.Scan(&u.FirstName)
+	if err != nil {
+		return u
+	}
 	fmt.Print("Enter your last name: ")
-	fmt.Scan(&u.LastName)
+	_, err = fmt.Scan(&u.LastName)
+	if err != nil {
+		return u
+	}
 	fmt.Print("Enter your email address: ")
-	fmt.Scan(&u.Email)
+	_, err = fmt.Scan(&u.Email)
+	if err != nil {
+		return u
+	}
 
 	return u
 
