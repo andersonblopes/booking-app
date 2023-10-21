@@ -1,16 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"booking-app/model"
+	_ "booking-app/model"
+	"fmt"
+)
 
 var conferenceName = "GO CONFERENCE"
 
 // User info
-var firstName string
-var lastName string
-var email string
 var numberOfTickets uint
-
 var remainingTickets uint = 50
+
+var user model.User
 
 func main() {
 
@@ -22,7 +24,7 @@ func main() {
 
 	fmt.Println("==========================")
 
-	obtainUserInfo()
+	user := obtainUserInfo(user)
 
 	fmt.Println("==========================")
 
@@ -30,20 +32,22 @@ func main() {
 
 	updateRemainingTickets(numberOfTickets)
 
-	fmt.Printf("\n\"Thank you %v %v for booking %v tickets. You will receive an email confirmation at %v\" \n", firstName, lastName, numberOfTickets, email)
+	fmt.Printf("\n\"Thank you %v %v for booking %v tickets. You will receive an email confirmation at %v\" \n", user.FirstName, user.LastName, numberOfTickets, user.Email)
 
 	fmt.Printf("\n\nATTENTION: Are still %v tickets available.\n\n", remainingTickets)
 	fmt.Println("==========================")
 }
 
-func obtainUserInfo() {
+func obtainUserInfo(u model.User) model.User {
 
 	fmt.Print("Enter your first name: ")
-	fmt.Scan(&firstName)
+	fmt.Scan(&u.FirstName)
 	fmt.Print("Enter your last name: ")
-	fmt.Scan(&lastName)
+	fmt.Scan(&u.LastName)
 	fmt.Print("Enter your email address: ")
-	fmt.Scan(&email)
+	fmt.Scan(&u.Email)
+
+	return u
 
 }
 
