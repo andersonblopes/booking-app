@@ -26,7 +26,7 @@ func main() {
 
 	obtainConferenceData()
 
-	fmt.Printf("Thank you %v %v for booking %v tickets, you will receive an email confirmation at %v \n", firstName, lastName, numberOfTickets, email)
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive an email confirmation at %v \n", firstName, lastName, numberOfTickets, email)
 
 	fmt.Println("==========================")
 }
