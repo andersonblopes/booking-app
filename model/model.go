@@ -5,3 +5,8 @@ type User struct {
 	LastName  string
 	Email     string
 }
+
+type Reservation struct {
+	User   User
+	Amount uint
+}
