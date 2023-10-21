@@ -1,8 +1,8 @@
-package main
+package server
 
 import (
-	"booking-app/model"
-	_ "booking-app/model"
+	"booking-app/booking/model"
+	_ "booking-app/booking/model"
 	"fmt"
 )
 
