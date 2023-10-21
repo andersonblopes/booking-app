@@ -8,7 +8,9 @@ var conferenceName = "GO CONFERENCE"
 var firstName string
 var lastName string
 var email string
-var numberOfTickets int
+var numberOfTickets uint
+
+var remainingTickets uint = 50
 
 func main() {
 
@@ -26,8 +28,11 @@ func main() {
 
 	obtainConferenceData()
 
-	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive an email confirmation at %v \n", firstName, lastName, numberOfTickets, email)
+	updateRemainingTickets(numberOfTickets)
 
+	fmt.Printf("\n\"Thank you %v %v for booking %v tickets. You will receive an email confirmation at %v\" \n", firstName, lastName, numberOfTickets, email)
+
+	fmt.Printf("\n\nATTENTION: Are still %v tickets available.\n\n", remainingTickets)
 	fmt.Println("==========================")
 }
 
@@ -45,4 +50,8 @@ func obtainUserInfo() {
 func obtainConferenceData() {
 	fmt.Print("How many tickets to book?: ")
 	fmt.Scan(&numberOfTickets)
+}
+
+func updateRemainingTickets(amount uint) {
+	remainingTickets = remainingTickets - amount
 }
