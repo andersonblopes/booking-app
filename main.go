@@ -29,9 +29,6 @@ func main() {
 	fmt.Printf("Thank you %v %v for booking %v tickets, you will receive an email confirmation at %v \n", firstName, lastName, numberOfTickets, email)
 
 	fmt.Println("==========================")
-
-	// fmt.Println(conferenceTickets)  // prints variable value
-	// fmt.Println(&conferenceTickets) // & prints memory address reference
 }
 
 func obtainUserInfo() {
